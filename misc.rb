@@ -1,3 +1,4 @@
+# encoding: utf-8
 require 'rubygems'
 #TODO спец обработку только для Ruby 1.8, в 1.9 использовать стандартную поддержку юникода
 $KCODE = 'UTF-8'

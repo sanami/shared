@@ -1,3 +1,4 @@
+# encoding: utf-8
 require 'rubygems'
 require 'yaml'
 
@@ -85,7 +86,12 @@ class OpenSettings
 		end
 
 		@properties[prop_name] = _create_property(prop_name) unless @properties.has_key? prop_name
-		@properties[prop_name] = *args unless args.empty?
+
+		if args.size == 1
+			@properties[prop_name] = args[0]
+		elsif !args.empty?
+			@properties[prop_name] = *args
+		end
 		@properties[prop_name]
 	end
 

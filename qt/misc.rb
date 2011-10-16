@@ -1,4 +1,6 @@
+# encoding: utf-8
 require 'Qt4'
+require File.dirname(__FILE__) + '/generate.rb'
 
 module Qt
 

@@ -10,6 +10,10 @@ class TC_QtTest < Test::Unit::TestCase
 	def teardown
 	end
 
+	def test_generate
+		Qt::generate 'qt_threads'
+	end
+	
 	def test_save_widget
 		#Qt.debug_level = Qt::DebugLevel::High
 
