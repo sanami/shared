@@ -1,8 +1,13 @@
 # encoding: utf-8
-require 'rubygems'
-#TODO спец обработку только для Ruby 1.8, в 1.9 использовать стандартную поддержку юникода
-$KCODE = 'UTF-8'
-require 'jcode'
+if RUBY_VERSION < "1.9"
+  require 'rubygems'
+  #TODO спец обработку только для Ruby 1.8, в 1.9 использовать стандартную поддержку юникода
+  $KCODE = 'UTF-8'
+  require 'jcode'
+
+  require File.dirname(__FILE__) + '/rx_unicode.rb'
+end
+
 require 'iconv'
 #require 'charguess' #библиотека не установлена    from = CharGuess::guess str
 require 'pp'
@@ -10,7 +15,6 @@ require 'yaml'
 require 'logger'
 require 'fileutils'
 
-require File.dirname(__FILE__) + '/rx_unicode.rb'
 require File.dirname(__FILE__) + '/ya2yaml.rb' # YAML в utf-8
 
 $console_codec = 'utf-8'  # Кодировка в которой консоль правильно отображает текст
